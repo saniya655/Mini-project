@@ -1,0 +1,101 @@
+Event_ID,Event_Date,Agency,Location,State,Event_Type,Units_Deployed,Description
+1,01-02-2026,QFD,Grampians,Victoria,Bushfire Assistance,12,Fire crews deployed to assist containment operations in the Grampians bushfire incident.
+2,02-02-2026,QFD,Grampians,Victoria,Bushfire Assistance,15,Ground firefighting teams and support vehicles deployed.
+3,03-02-2026,CFA,Grampians,Victoria,Bushfire Response,20,Volunteer firefighters supported suppression efforts.
+4,04-02-2026,NSW RFS,Albury,NSW,Bushfire Response,18,Rural fire service deployed for containment support.
+5,05-02-2026,QFD,Albury,NSW,Bushfire Assistance,10,Interstate deployment for fire suppression.
+6,06-02-2026,SES,Grampians,Victoria,Support Operations,8,Emergency support units deployed for logistics.
+7,07-02-2026,CFA,Melbourne,Victoria,Standby,6,Fire crews placed on standby due to high fire danger.
+8,08-02-2026,QFD,Melbourne,Victoria,Prevention,5,Fire monitoring and prevention patrols conducted.
+9,09-02-2026,NSW RFS,Sydney,NSW,Standby,9,High-risk fire weather monitoring deployed.
+10,10-02-2026,CFA,Ballarat,Victoria,Bushfire Response,14,Active fire suppression support operations.
+11,11-02-2026,QFD,Grampians,Victoria,Bushfire Assistance,22,Air and ground firefighting coordination.
+12,12-02-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,19,Fire containment operations supported.
+13,13-02-2026,CFA,Bendigo,Victoria,Support Operations,11,Logistics and water supply support.
+14,14-02-2026,QFD,Grampians,Victoria,Bushfire Assistance,25,Major escalation response deployed.
+15,15-02-2026,NSW RFS,Albury,NSW,Bushfire Response,16,Fire suppression teams deployed.
+16,16-02-2026,CFA,Geelong,Victoria,Standby,7,Monitoring elevated fire risk conditions.
+17,17-02-2026,QFD,Grampians,Victoria,Bushfire Assistance,30,Heavy deployment due to fire expansion.
+18,18-02-2026,NSW RFS,Sydney,NSW,Support Operations,13,Urban interface fire monitoring.
+19,19-02-2026,CFA,Melbourne,Victoria,Prevention,6,Fire risk mitigation patrols.
+20,20-02-2026,QFD,Ballarat,Victoria,Bushfire Assistance,18,Assisting local fire suppression units.
+21,21-02-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,21,Fire containment and monitoring.
+22,22-02-2026,CFA,Bendigo,Victoria,Support Operations,10,Water bombing coordination support.
+23,23-02-2026,QFD,Grampians,Victoria,Bushfire Assistance,28,Multi-agency coordination deployed.
+24,24-02-2026,NSW RFS,Albury,NSW,Bushfire Response,17,Fire edge containment operations.
+25,25-02-2026,CFA,Geelong,Victoria,Standby,8,Monitoring fire danger index levels.
+26,26-02-2026,QFD,Melbourne,Victoria,Prevention,5,Fire prevention patrols conducted.
+27,27-02-2026,NSW RFS,Sydney,NSW,Support Operations,12,Emergency response readiness.
+28,28-02-2026,CFA,Grampians,Victoria,Bushfire Response,24,Active suppression and containment.
+29,01-03-2026,QFD,Ballarat,Victoria,Bushfire Assistance,20,Fire crew deployment escalated.
+30,02-03-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,15,Ground fire suppression support.
+31,03-03-2026,CFA,Bendigo,Victoria,Support Operations,9,Logistics support deployment.
+32,04-03-2026,QFD,Grampians,Victoria,Bushfire Assistance,32,Large-scale fire response operation.
+33,05-03-2026,NSW RFS,Albury,NSW,Bushfire Response,18,Fire containment reinforcement.
+34,06-03-2026,CFA,Melbourne,Victoria,Standby,6,Fire risk monitoring.
+35,07-03-2026,QFD,Grampians,Victoria,Bushfire Assistance,35,Maximum deployment phase.
+36,08-03-2026,NSW RFS,Sydney,NSW,Support Operations,11,Fire preparedness operations.
+37,09-03-2026,CFA,Ballarat,Victoria,Bushfire Response,16,Fire suppression coordination.
+38,10-03-2026,QFD,Grampians,Victoria,Bushfire Assistance,27,Air support and ground crews deployed.
+39,11-03-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,19,Containment line strengthening.
+40,12-03-2026,CFA,Bendigo,Victoria,Support Operations,10,Resource logistics support.
+41,13-03-2026,QFD,Melbourne,Victoria,Prevention,5,Fire prevention monitoring.
+42,14-03-2026,NSW RFS,Albury,NSW,Bushfire Response,14,Fire suppression operations.
+43,15-03-2026,CFA,Grampians,Victoria,Bushfire Assistance,29,Ongoing fire containment.
+44,16-03-2026,QFD,Ballarat,Victoria,Bushfire Assistance,22,Interagency coordination support.
+45,17-03-2026,NSW RFS,Sydney,NSW,Support Operations,13,Fire risk assessment operations.
+46,18-03-2026,CFA,Melbourne,Victoria,Standby,7,Monitoring fire conditions.
+47,19-03-2026,QFD,Grampians,Victoria,Bushfire Assistance,31,High intensity deployment.
+48,20-03-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,18,Fire containment reinforcement.
+49,21-03-2026,CFA,Bendigo,Victoria,Support Operations,9,Operational support.
+50,22-03-2026,QFD,Grampians,Victoria,Bushfire Assistance,34,Peak deployment phase.
+51,23-03-2026,NSW RFS,Albury,NSW,Bushfire Response,16,Fire suppression teams active.
+52,24-03-2026,CFA,Geelong,Victoria,Standby,6,Fire danger monitoring.
+53,25-03-2026,QFD,Melbourne,Victoria,Prevention,5,Fire patrol operations.
+54,26-03-2026,NSW RFS,Sydney,NSW,Support Operations,12,Emergency readiness.
+55,27-03-2026,CFA,Grampians,Victoria,Bushfire Response,23,Fire containment operations.
+56,28-03-2026,QFD,Ballarat,Victoria,Bushfire Assistance,21,Support deployment.
+57,29-03-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,15,Fire suppression.
+58,30-03-2026,CFA,Bendigo,Victoria,Support Operations,10,Logistics support.
+59,31-03-2026,QFD,Grampians,Victoria,Bushfire Assistance,30,Fire response escalation.
+60,01-04-2026,NSW RFS,Albury,NSW,Bushfire Response,17,Containment operations.
+61,02-04-2026,CFA,Melbourne,Victoria,Standby,6,Monitoring conditions.
+62,03-04-2026,QFD,Grampians,Victoria,Bushfire Assistance,28,Fire suppression operations.
+63,04-04-2026,NSW RFS,Sydney,NSW,Support Operations,11,Preparedness operations.
+64,05-04-2026,CFA,Ballarat,Victoria,Bushfire Response,16,Active support.
+65,06-04-2026,QFD,Grampians,Victoria,Bushfire Assistance,32,High-level deployment.
+66,07-04-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,19,Containment reinforcement.
+67,08-04-2026,CFA,Bendigo,Victoria,Support Operations,9,Operational logistics.
+68,09-04-2026,QFD,Grampians,Victoria,Bushfire Assistance,35,Maximum fire response.
+69,10-04-2026,NSW RFS,Albury,NSW,Bushfire Response,18,Fire suppression.
+70,11-04-2026,CFA,Melbourne,Victoria,Standby,7,Fire risk monitoring.
+71,12-04-2026,QFD,Ballarat,Victoria,Bushfire Assistance,20,Support operations.
+72,13-04-2026,NSW RFS,Sydney,NSW,Support Operations,12,Emergency readiness.
+73,14-04-2026,CFA,Grampians,Victoria,Bushfire Response,24,Fire containment.
+74,15-04-2026,QFD,Grampians,Victoria,Bushfire Assistance,33,Large-scale deployment.
+75,16-04-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,15,Fire suppression.
+76,17-04-2026,CFA,Bendigo,Victoria,Support Operations,10,Logistics support.
+77,18-04-2026,QFD,Grampians,Victoria,Bushfire Assistance,31,Fire response operations.
+78,19-04-2026,NSW RFS,Albury,NSW,Bushfire Response,17,Containment support.
+79,20-04-2026,CFA,Melbourne,Victoria,Standby,6,Monitoring fire danger.
+80,21-04-2026,QFD,Ballarat,Victoria,Bushfire Assistance,22,Fire support operations.
+81,22-04-2026,NSW RFS,Sydney,NSW,Support Operations,13,Preparedness actions.
+82,23-04-2026,CFA,Grampians,Victoria,Bushfire Response,25,Active suppression.
+83,24-04-2026,QFD,Grampians,Victoria,Bushfire Assistance,34,Peak deployment.
+84,25-04-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,18,Fire containment.
+85,26-04-2026,CFA,Bendigo,Victoria,Support Operations,9,Support logistics.
+86,27-04-2026,QFD,Melbourne,Victoria,Prevention,5,Fire prevention patrols.
+87,28-04-2026,NSW RFS,Albury,NSW,Bushfire Response,16,Suppression teams.
+88,29-04-2026,CFA,Grampians,Victoria,Bushfire Response,27,Fire response.
+89,30-04-2026,QFD,Ballarat,Victoria,Bushfire Assistance,20,Support deployment.
+90,01-05-2026,NSW RFS,Sydney,NSW,Support Operations,12,Fire readiness.
+91,02-05-2026,CFA,Melbourne,Victoria,Standby,6,Monitoring conditions.
+92,03-05-2026,QFD,Grampians,Victoria,Bushfire Assistance,30,Fire operations.
+93,04-05-2026,NSW RFS,Wagga Wagga,NSW,Bushfire Response,17,Containment work.
+94,05-05-2026,CFA,Bendigo,Victoria,Support Operations,10,Logistics support.
+95,06-05-2026,QFD,Grampians,Victoria,Bushfire Assistance,32,Fire suppression.
+96,07-05-2026,NSW RFS,Albury,NSW,Bushfire Response,18,Fire response.
+97,08-05-2026,CFA,Melbourne,Victoria,Standby,7,Fire monitoring.
+98,09-05-2026,QFD,Ballarat,Victoria,Bushfire Assistance,21,Support deployment.
+99,10-05-2026,NSW RFS,Sydney,NSW,Support Operations,13,Preparedness operations.
+100,11-05-2026,QFD,Grampians,Victoria,Bushfire Assistance,35,Final peak deployment phase.

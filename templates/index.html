@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bushfire Analytics</title>
+    <link rel="stylesheet" href="/static/css/mp.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>🔥 Bushfire Analytics</h2>
+    <div class="nav-item active" data-page="page1">🏠 Home</div>
+    <div class="nav-item" data-page="page2">📂 Datasets</div>
+    <div class="nav-item" data-page="page3">📊 Insights</div>
+    <div class="nav-item" data-page="page4">🗺️ Heatmap &amp; Predict</div>
+    <div class="nav-item" data-page="page5">🤖 Manual Predict</div>
+    <div class="nav-item" data-page="page6">🔮 7-Day Forecast</div>
+</div>
+
+<div class="main">
+
+    <!-- PAGE 1: HOME -->
+    <div class="page active" id="page1">
+        <div class="hero">
+            <h1>Australia's Bushfire Crisis</h1>
+            <p>
+                <b>Awareness &amp; Action:</b> Understanding the impact of wildfires on wildlife, climate, and communities.
+                Australia has always faced bushfires, but recent years have seen unprecedented intensity.
+                This project explores the causes behind these fires, the devastating consequences for biodiversity,
+                and the resilience of the Australian people in the face of natural disasters.
+                The Earth is what we all have in common. Protecting it starts with understanding the challenges it faces.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon" style="background:linear-gradient(135deg,#ff6b35,#f59e0b);">📂</div>
+                <h3>Two Datasets</h3>
+                <p>NASA MODIS fire detections plus agency deployment records.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon" style="background:linear-gradient(135deg,#06b6d4,#0ea5e9);">📊</div>
+                <h3>Visual Insights</h3>
+                <p>Time-series trends for confidence, brightness, FRP and fire counts.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon" style="background:linear-gradient(135deg,#10b981,#22c55e);">🗺️</div>
+                <h3>Geographic Heatmap</h3>
+                <p>Interactive Leaflet map of every detected fire across Australia.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon" style="background:linear-gradient(135deg,#8b5cf6,#6366f1);">🤖</div>
+                <h3>ML-based Prediction</h3>
+                <p>Random Forest model predicts fire-risk probability for any chosen date.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon" style="background:linear-gradient(135deg,#f43f5e,#fb7185);">✍️</div>
+                <h3>Manual Prediction</h3>
+                <p>Input custom coordinates, brightness, and confidence to predict FRP.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon" style="background:linear-gradient(135deg,#a855f7,#d946ef);">🔮</div>
+                <h3>7-Day Forecast</h3>
+                <p>Estimated average Fire Radiative Power for any 7-day window — past or future.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: DATASETS -->
+    <div class="page" id="page2">
+        <h1>Datasets</h1>
+        <p class="sub">Tabular data behind each Insights chart — filtered by the same date range you set in Insights.</p>
+
+        <div class="filter-bar" id="ds-filter-bar">
+            <label>From:</label>
+            <input type="date" id="ds-start" />
+            <label>To:</label>
+            <input type="date" id="ds-end" />
+            <button onclick="applyDatasetFilter()">🔍 Apply</button>
+            <button class="reset" onclick="resetDatasetFilter()">↻ Reset</button>
+            <span class="filter-info" id="ds-filter-info">Showing all data</span>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="ds1">📈 Avg Confidence</div>
+            <div class="tab" data-tab="ds2">🌡️ Brightness vs T31</div>
+            <div class="tab" data-tab="ds3">🔥 Total FRP/Day</div>
+            <div class="tab" data-tab="ds4">🔢 Fire Count/Day</div>
+            <div class="tab" data-tab="ds5">🚒 By Agency</div>
+            <div class="tab" data-tab="ds6">🗺️ By State</div>
+        </div>
+
+        <div class="tab-content active" id="tab-ds1">
+            <div class="table-wrap"><table id="tbl-ds1"><tr><td class="loading">Loading…</td></tr></table></div>
+        </div>
+        <div class="tab-content" id="tab-ds2">
+            <div class="table-wrap"><table id="tbl-ds2"><tr><td class="loading">Loading…</td></tr></table></div>
+        </div>
+        <div class="tab-content" id="tab-ds3">
+            <div class="table-wrap"><table id="tbl-ds3"><tr><td class="loading">Loading…</td></tr></table></div>
+        </div>
+        <div class="tab-content" id="tab-ds4">
+            <div class="table-wrap"><table id="tbl-ds4"><tr><td class="loading">Loading…</td></tr></table></div>
+        </div>
+        <div class="tab-content" id="tab-ds5">
+            <div class="table-wrap"><table id="tbl-ds5"><tr><td class="loading">Loading…</td></tr></table></div>
+        </div>
+        <div class="tab-content" id="tab-ds6">
+            <div class="table-wrap"><table id="tbl-ds6"><tr><td class="loading">Loading…</td></tr></table></div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: INSIGHTS -->
+    <div class="page" id="page3">
+        <h1>Insights &amp; Trends</h1>
+        <p class="sub">Aggregated patterns across the dataset. Use the date range below to filter all stats and charts.</p>
+
+        <div class="filter-bar">
+            <label>From:</label>
+            <input type="date" id="ins-start" />
+            <label>To:</label>
+            <input type="date" id="ins-end" />
+            <button onclick="applyInsightsFilter()">🔍 Apply</button>
+            <button class="reset" onclick="resetInsightsFilter()">↻ Reset All</button>
+            <span class="filter-info" id="ins-filter-info">Showing all data</span>
+        </div>
+
+        <div class="stats-grid" id="stats-grid"><div class="loading">Loading stats...</div></div>
+        <div class="charts-grid">
+            <div class="chart-card"><h3>Avg Confidence over Time</h3><canvas id="dash1"></canvas></div>
+            <div class="chart-card"><h3>Max Brightness vs Temperature</h3><canvas id="dash2"></canvas></div>
+            <div class="chart-card"><h3>Total FRP per Day</h3><canvas id="dash3"></canvas></div>
+            <div class="chart-card"><h3>Fire Count per Day</h3><canvas id="dash4"></canvas></div>
+            <div class="chart-card"><h3>Units Deployed by Agency</h3><canvas id="dash5"></canvas></div>
+            <div class="chart-card"><h3>Units Deployed by State</h3><canvas id="dash6"></canvas></div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: HEATMAP -->
+    <div class="page" id="page4">
+        <h1>Geographic Heatmap &amp; ML Prediction</h1>
+        <p class="sub">All detected fires plotted on Australia. Pick a date — the trained Random Forest model will predict fire-risk zones.</p>
+        <div class="predict-bar">
+            <label for="predict-date">Predict for date:</label>
+            <input type="date" id="predict-date" />
+            <button onclick="runPrediction()">🤖 Predict</button>
+            <button class="reset" onclick="loadHeatmap(true)">↻ Reset to All Fires</button>
+            <div class="predict-result" id="predict-result">Showing: all historical fires</div>
+        </div>
+        <div id="map"></div>
+        <div class="heat-legend">
+            <span class="legend-label">Low Risk</span>
+            <div class="legend-bar"></div>
+            <span class="legend-label">High Risk</span>
+        </div>
+    </div>
+
+    <!-- PAGE 5: MANUAL PREDICT -->
+    <div class="page" id="page5">
+        <h1>Manual FRP Prediction</h1>
+        <p class="sub">Enter fire detection parameters manually to get a predicted Fire Radiative Power (FRP) value.</p>
+        <div class="predict-form-card">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Latitude</label>
+                    <input type="number" id="m-lat" value="-37.0" step="0.01" />
+                </div>
+                <div class="form-group">
+                    <label>Longitude</label>
+                    <input type="number" id="m-lon" value="145.0" step="0.01" />
+                </div>
+                <div class="form-group">
+                    <label>Brightness (K)</label>
+                    <input type="number" id="m-br" value="300.0" step="0.1" />
+                </div>
+                <div class="form-group">
+                    <label>Bright_T31 (K)</label>
+                    <input type="number" id="m-bt31" value="280.0" step="0.1" />
+                </div>
+                <div class="form-group span2">
+                    <label>Confidence: <span id="conf-val">80</span>%</label>
+                    <input type="range" id="m-conf" min="0" max="100" value="80"
+                           oninput="document.getElementById('conf-val').textContent=this.value" />
+                </div>
+            </div>
+            <button class="predict-btn" onclick="runManualPredict()">🔍 Predict FRP</button>
+            <div class="predict-output" id="manual-result" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- PAGE 6: FUTURE FORECAST -->
+    <div class="page" id="page6">
+        <h1>7-Day FRP Forecast</h1>
+        <p class="sub">Predicted Fire Radiative Power for any 7-day window. Pick a start date or leave blank for the next 7 days from today.</p>
+
+        <!-- Forecast date picker -->
+        <div class="filter-bar">
+            <label>Forecast start date:</label>
+            <input type="date" id="forecast-start-date" />
+            <button onclick="forecastLoaded=false; loadForecast();">🔮 Generate Forecast</button>
+            <button class="reset" onclick="document.getElementById('forecast-start-date').value=''; forecastLoaded=false; loadForecast();">↻ Reset to Today</button>
+            <span class="filter-info" id="forecast-filter-info">Showing next 7 days from today</span>
+        </div>
+
+        <div class="forecast-layout">
+            <div class="forecast-table-wrap">
+                <table id="forecast-table">
+                    <thead><tr><th>Date</th><th>Estimated Avg FRP (MW)</th></tr></thead>
+                    <tbody id="forecast-body"><tr><td colspan="2" class="loading">Loading...</td></tr></tbody>
+                </table>
+            </div>
+            <div class="chart-card" style="flex:1;">
+                <h3>Forecast Trend</h3>
+                <canvas id="forecast-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/css/mp.js"></script>
+</body>
+</html>
