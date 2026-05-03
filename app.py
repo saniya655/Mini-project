@@ -589,7 +589,8 @@ def future_forecast():
     return jsonify(forecast)
 
 
+load_and_train()
+load_met()
+
 if __name__ == '__main__':
-    load_and_train()
-    load_met()
-    app.run(debug=True, port=5000)
+    app.run(debug=False)
