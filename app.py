@@ -140,7 +140,7 @@ def fetch_openmeteo_forecast(start_date_str=None):
             f"&forecast_days={forecast_days}"
         )
         try:
-            with urllib.request.urlopen(url, timeout=8) as resp:
+            with urllib.request.urlopen(url, timeout=15) as resp:
                 data = json.loads(resp.read().decode())
             daily    = data.get("daily", {})
             dates    = daily.get("time", [])
