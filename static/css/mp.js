@@ -468,12 +468,15 @@ async function loadForecast() {
         const wrap = document.getElementById("forecast-body").closest(".forecast-table-wrap");
         if (wrap) wrap.after(badge);
     }
-    const source = data[0]?.source || "";
+
+const source = data[0]?.source || "";
     if (source.includes("Open-Meteo")) {
         badge.style.color = "#10b981";
         badge.textContent = "✅ Powered by Open-Meteo live weather + Random Forest ML model";
+    } else if (source.includes("Statistical")) {
+        badge.style.color = "#10b981";
+        badge.textContent = "✅ Powered by Random Forest ML model (live weather unavailable on free hosting tier)";
     } else {
         badge.style.color = "#f59e0b";
-        badge.textContent = "⚠️ Weather API unavailable — using RF model with estimated weather inputs";
-    }
-}
+        badge.textContent = "⚠️ Forecast unavailable";
+    }}
